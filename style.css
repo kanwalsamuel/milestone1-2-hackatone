@@ -15,6 +15,7 @@
 
 html {
     font-size: 10px;
+    text-align: left;
 }
 
 body {
@@ -40,11 +41,11 @@ a:hover {
 }
 
 .description {
-    margin-top: 1.8rem;
+    margin: 1rem 3rem; /* Unified margins for all descriptions */
     font-size: 1.8rem; /* Increased font size */
     font-weight: 400;
     color: var(--text-color);
-    margin-left: 3rem;
+    
 }
 
 .title {
@@ -53,6 +54,10 @@ a:hover {
     font-size: 2.2rem; /* Increased font size */
     text-transform: uppercase;
     text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.item_preTitle, .item_title, .item_subtitle {
+    margin: 1rem 3rem; /* Unified margins */
 }
 
 .item_preTitle {
@@ -79,7 +84,7 @@ a:hover {
 .profile_title {
     font-size: 1.6rem; /* Adjust the font size as needed */
     font-weight: 500; /* You can also change the font weight */
-    margin-left: 3rem;
+    margin: 1rem 3rem; /* Unified margin */
 }
 
 /* Layouts */
@@ -181,8 +186,7 @@ a:hover {
 
 /* Expertise */
 .skills_list {
-    margin-top: 1rem;
-    margin-left: 2rem;
+    margin: 1rem 2rem; /* Unified margin */
     line-height: 2;
     color: var(--text-color);
     font-size: 1.6rem; /* Increased font size */
@@ -216,19 +220,31 @@ hr {
 @media only screen and (max-width: 768px) {
     .container {
         width: 100%;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Change to a single column */
         padding: 3rem;
         gap: 5rem;
     }
+    
+    /* Align profile photo and name in a column */
     .profile {
         margin-bottom: 0;
+        display: flex; /* Use flex to stack items */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align */
     }
+    
     .profile_profileImg {
+        margin-bottom: 1rem; /* Space below the image */
         flex: 0 0 120px; /* Adjust the base width for smaller screens */
     }
+    
+    .profile_name {
+        display: flex; /* Use flexbox for the name layout */
+        flex-direction: column; /* Align items in a column */
+        align-items: center; /* Center items */
+        text-align: center; /* Center text */
+    }
 }
-
-
 
 @media only screen and (max-width: 450px) {
     .container { /* Assuming you have a container for your profile */
@@ -246,6 +262,7 @@ hr {
 
     .description {
         font-size: 1.1rem; /* Adjust font size for smaller screens */
+        margin: 0 1rem; /* Adjust margins */
     }
 
     .item_title {
@@ -262,109 +279,75 @@ hr {
         font-size: 1.2rem; /* Specific font size for item_preTitle */
         margin-top: 0.2rem; /* Space above pre-title */
     }
-
+ 
     .profile_name {
-        display: flex; /* Use flexbox for the name layout */
-        flex-direction: row; /* Align items in a row */
-        justify-content: center; /* Center the items */
-        align-items: baseline; /* Align items vertically */
-        font-size: 1.5rem; /* Font size for the combined name */
-        margin-top: 0.3rem; /* Space above the name */
-    }
-
-    .profile_name_firstName {
-        font-size: 1.2rem; /* Space between first and last name */
-    }
-
-    .profile_name_lastName {
-        font-size: 1.2rem; /* Specific font size for profile_name_lastName */
-    }
-
-    .profile_role {
-        font-size: 1.1rem; /* Font size for the role */
-        margin-top: 0.2rem; /* Space above role */
-    }
-
-    .interest_item {
-        padding: 0.6rem 0.8rem; /* Reduce padding */
-    }
-
-    hr {
-        width: 90%; /* Adjust divider width */
-    }
+        flex-direction: column; /* Align items in a column */
+        align-items: center; /* Center items */
+    } 
+    .profile_name_firstName{
+        font-size: 1.4rem;
+    
 }
 
+.profile_name_lastName{
+    font-size: 1.2rem;
 
+}
 
-
-
+.profile_title{
+    font-size: 1rem;
+}
+}
 
 @media only screen and (max-width: 350px) {
-    .container { /* Assuming you have a container for your profile */
+    .container { 
         display: flex;
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items horizontally */
+        padding: 1rem; /* Add some padding to the container */
     }
 
     .profile_profileImg {
-        width: 80px; /* Set a smaller fixed width for the image */
-        height: 80px; /* Ensure the height matches the width for a square image */
+        width: 70px; /* Set a smaller fixed width for the image */
+        height: 70px; /* Ensure the height matches the width for a square image */
         border-radius: 50%; /* Make the image round */
-        margin-bottom: 0.8rem; /* Add space below the image */
+        margin-bottom: 0.5rem; /* Add space below the image */
     }
 
     .description {
-        font-size: 0.8rem; /* Adjust font size for smaller screens */
-        text-align: left;
+        font-size: 0.9rem; /* Further reduce font size for smaller screens */
+        margin: 0 0.5rem; /* Adjust margins for smaller screens */
     }
 
     .item_title {
-        font-size: 1.2rem; /* Specific font size for item_title */
-        margin-top: 0.4rem; /* Space above title */
+        font-size: 1rem; /* Reduce font size for item_title */
+        margin-top: 0.3rem; /* Space above title */
     }
 
     .item_subtitle {
-        font-size: 1rem; /* Specific font size for item_subtitle */
-        margin-top: 0.3rem; /* Space above subtitle */
+        font-size: 0.9rem; /* Reduce font size for item_subtitle */
+        margin-top: 0.2rem; /* Space above subtitle */
     }
 
     .item_preTitle {
-        font-size: 1.1rem; /* Specific font size for item_preTitle */
-        margin-top: 0.2rem; /* Space above pre-title */
+        font-size: 0.8rem; /* Reduce font size for item_preTitle */
+        margin-top: 0.1rem; /* Space above pre-title */
     }
 
     .profile_name {
-        display: flex; /* Use flexbox for the name layout */
-        flex-direction: row; /* Align items in a row */
-        justify-content: center; /* Center the items */
-        align-items: baseline; /* Align items vertically */
-        font-size: 1.4rem; /* Font size for the combined name */
-        margin-top: 0.2rem; /* Space above the name */
-    }
+        flex-direction: column; /* Align items in a column */
+        align-items: center; /* Center items */
+    } 
 
     .profile_name_firstName {
-        font-size: 1.2rem; /* Specific font size for profile_name_firstName */
-        margin-right: 0.5rem; /* Space between first and last name */
+        font-size: 1.2rem; /* Reduce font size */
     }
 
     .profile_name_lastName {
-        font-size: 1.2rem; /* Specific font size for profile_name_lastName */
+        font-size: 1rem; /* Reduce font size */
     }
 
-    .profile_role {
-        font-size: 1.2rem; /* Font size for the role */
-        margin-top: 0.2rem; /* Space above role */
-    }
-    .profile_title{
-        font-size: 0.9rem;
-    }
-
-    .interest_item {
-        padding: 0.6rem 0.8rem; /* Further reduce padding */
-    }
-
-    hr {
-        width: 90%; /* Adjust divider width */
+    .profile_title {
+        font-size: 0.8rem; /* Reduce font size for title */
     }
 }
-
