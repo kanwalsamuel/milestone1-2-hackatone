@@ -227,32 +227,58 @@ hr {
         flex: 0 0 120px; /* Adjust the base width for smaller screens */
     }
 }
+
+
+
 @media only screen and (max-width: 480px) {
+    .container { /* Assuming you have a container for your profile */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .profile_profileImg {
+        width: 100px; /* Set a fixed width for the image */
+        height: 100px; /* Ensure the height matches the width for a square image */
+        border-radius: 50%; /* Make the image round */
+        margin-bottom: 1rem; /* Add space below the image */
+    }
+
     .description {
         font-size: 1.2rem; /* Adjust for smaller screens */
+        text-align: left;
     }
+
     .item_title {
         font-size: 1.4rem; /* Specific font size for item_title */
+        margin-top: 0.5rem; /* Space above title */
     }
+
     .item_subtitle {
         font-size: 1.2rem; /* Specific font size for item_subtitle */
+        margin-top: 0.3rem; /* Space above subtitle */
     }
+
     .item_preTitle {
         font-size: 1.3rem; /* Specific font size for item_preTitle */
+        margin-top: 0.2rem; /* Space above pre-title */
     }
+
     .profile_name_firstName {
         font-size: 1.6rem; /* Specific font size for profile_name_firstName */
+        margin-top: 0.3rem; /* Space above first name */
     }
+
     .profile_name_lastName {
         font-size: 1.8rem; /* Specific font size for profile_name_lastName */
+        margin-top: 0.3rem; /* Space above last name */
     }
+
     .interest_item {
         padding: 0.8rem 1rem; /* Reduce padding */
     }
+
     hr {
         width: 90%; /* Adjust divider width */
-    }
-    .profile_profileImg {
-        flex: 0 0 100px; /* Further adjust the base width for very small screens */
     }
 }
