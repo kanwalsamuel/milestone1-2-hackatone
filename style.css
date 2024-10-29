@@ -7,8 +7,10 @@
 }
 
 :root {
-    --primary-color: #1e90ff; /* Changed to blue */
-    --text-color: #ffffff; /* Changed to white */
+    --primary-color: #00ffff; /* Neon Cyan */
+    --secondary-color: #ff00ff; /* Neon Magenta */
+    --highlight-color: #00ff00; /* Neon Green */
+    --text-color: #e0e0e0; /* Light grey for readability */
 }
 
 html {
@@ -16,74 +18,83 @@ html {
 }
 
 body {
-    font-family: Inter, sans-serif;
-    background-color: black;
-    color: white;
+    font-family: 'Inter', sans-serif;
+    background-color: #1a1a4b; /* Midnight Blue */
+    color: var(--text-color);
 }
 
-/* common styles */
+/* Common styles */
 img {
-    width: 100%;
-    border-radius: 50%; /* Make images round */
+    border-radius: 50%;
+    border: 4px solid var(--highlight-color); /* Thicker border */
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight-color);
 }
 
 .description {
-    margin-top: 1rem;
-    font-size: 1.5rem;
+    margin-top: 1.8rem;
+    font-size: 1.8rem; /* Increased font size */
     font-weight: 400;
     color: var(--text-color);
+    margin-left: 3rem;
 }
 
 .title {
     color: var(--primary-color);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 2.2rem; /* Increased font size */
     text-transform: uppercase;
+    text-shadow: 0 0 10px var(--secondary-color);
 }
 
 .item_preTitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem; /* Increased font size */
     color: var(--text-color);
     font-weight: 300;
 }
 
 .item_title {
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* Increased font size */
     color: white;
     font-weight: 500;
     margin: 0.8rem 0;
+    text-shadow: 0 0 5px var(--primary-color);
 }
 
 .item_subtitle {
-    font-size: 1.4rem;
+    font-size: 2rem; /* Increased font size */
     color: var(--text-color);
     font-weight: 400;
 }
 
-/* layouts */
+/* Profile Title Style */
+.profile_title {
+    font-size: 1.6rem; /* Adjust the font size as needed */
+    font-weight: 500; /* You can also change the font weight */
+    margin-left: 3rem;
+}
+
+/* Layouts */
 .container {
     max-width: 1000px;
     width: 90%;
     margin: 0 auto;
     display: grid;
     padding: 5rem;
-    background: #2a292b;
+    background: #003d3f; /* Dark Teal */
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-}
-
-@media only screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        grid-template-columns: 1fr;
-        padding: 3rem;
-        gap: 7rem;
-    }
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--primary-color);
 }
 
 .profile {
@@ -91,72 +102,81 @@ a {
     margin-bottom: 2rem;
 }
 
-.group-1,
-.group-2 {
+.group-1, .group-2, .group-3 {
     display: flex;
     flex-direction: column;
     gap: 5rem;
 }
 
-.group-3 {
-    max-width: 700px;
-    width: 100%;
-    margin: 0 auto;
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    gap: 5rem; /* Ensures spacing between items */
-}
-
-@media only screen and (max-width: 768px) {
-    .profile {
-        margin-bottom: 0;
-    }
-    .group-3 {
-        flex-direction: column;
-    }
-}
-
-/* profile */
 .profile_container {
     display: flex;
     gap: 2rem;
+    color: var(--primary-color);
 }
 
 .profile_profileImg {
-    max-width: 250px;
-    overflow: hidden; /* Ensure no overflow */
+    flex: 0 0 150px; /* Set a base width for the image container */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.profile_profileImg img {
+    max-width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .profile_name_firstName {
-    color: white;
     font-weight: 200;
-    font-size: clamp(2rem, 8vw, 4rem);
+    font-size: clamp(2.2rem, 8vw, 4.5rem); /* Increased font size */
     text-transform: uppercase;
-    display: block;
-    margin-bottom: -0.8rem;
+    color: var(--text-color);
+    margin-left: 3rem;
 }
 
 .profile_name_lastName {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: 700;
-    font-size: clamp(2.5rem, 15vw, 7rem);
+    font-size: clamp(2.8rem, 15vw, 7.5rem); /* Increased font size */
     text-transform: uppercase;
-    display: block;
+    text-shadow: 0 0 8px var(--highlight-color);
 }
 
-.profile_title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
+.interest {
+    margin-top: 2rem;
 }
 
+.interest_items {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 2rem; /* Space between items */
+}
 
+.interest_item {
+    display: flex;
+    align-items: center; /* Center the icon and text vertically */
+    background: #1a1a1a; /* Dark background for items */
+    border: 2px solid var(--primary-color);
+    border-radius: 10px; /* Rounded corners */
+    padding: 1rem 1.5rem; /* Padding for spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation on hover */
+    margin-top: 2rem;
+}
 
-@media only screen and (max-width: 768px) {
-    .profile_container {
-        flex-direction: column;
-    }
+.interest_item:hover {
+    transform: scale(1.05); /* Slightly enlarge the item */
+    box-shadow: 0 0 15px var(--highlight-color); /* Glow effect on hover */
+}
+
+.interest_item i {
+    margin-right: 1rem; /* Space between icon and text */
+    color: var(--primary-color); /* Icon color */
+    font-size: 2rem; /* Icon size */
+}
+
+.interest_item span {
+    color: var(--text-color); /* Text color */
+    font-size: 1.6rem; /* Font size */
 }
 
 /* Expertise */
@@ -164,96 +184,75 @@ a {
     margin-top: 1rem;
     margin-left: 2rem;
     line-height: 2;
-}
-
-/* Ref  */
-.ref_item {
-    margin-top: 2rem;
-}
-
-.ref_name {
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-/* education */
-.edu_item {
-    margin-top: 2rem;
-}
-
-/* certification */
-.certification_item {
-    margin-top: 2rem;
-}
-
-/* experience */
-.exp_item {
-    margin-top: 2rem;
-}
-
-/* awards */
-.awards_item {
-    margin-top: 2rem;
-}
-
-/* Interests */
-.interest_items {
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.interest_item {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
     color: var(--text-color);
+    font-size: 1.6rem; /* Increased font size */
+    text-shadow: 0 0 5px var(--secondary-color);
 }
 
-.interest_item svg {
-    width: 2rem;
-}
-
-/* socials */
-.social_items {
-    margin-top: 2rem;
-}
-
-.social_item {
-    margin-top: 1.5rem;
-    font-size: 1.5rem;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: flex-start;
-    color: var(--text-color);
-}
-
+/* Socials */
 .social_item:hover {
-    color: var(--primary-color);
+    color: var(--highlight-color);
+    text-shadow: 0 0 10px var(--highlight-color);
 }
 
-.social_item svg {
-    width: 2rem;
-}
-
+/* Horizontal divider */
 hr {
     grid-column: 1 / -1;
     width: 80%;
-    margin: 0 auto;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
+    margin: 5rem auto 1rem auto;
     border: none;
-    border-top: 2px solid rgba(128, 128, 128, 0.229);
+    border-top: 2px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 4rem;
+        gap: 3rem;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap: 5rem;
+    }
+    .profile {
+        margin-bottom: 0;
+    }
+    .profile_profileImg {
+        flex: 0 0 120px; /* Adjust the base width for smaller screens */
+    }
+}
+@media only screen and (max-width: 480px) {
+    .description {
+        font-size: 1.2rem; /* Adjust for smaller screens */
+    }
+    .item_title {
+        font-size: 1.4rem; /* Specific font size for item_title */
+    }
+    .item_subtitle {
+        font-size: 1.2rem; /* Specific font size for item_subtitle */
+    }
+    .item_preTitle {
+        font-size: 1.3rem; /* Specific font size for item_preTitle */
+    }
+    .profile_name_firstName {
+        font-size: 1.6rem; /* Specific font size for profile_name_firstName */
+    }
+    .profile_name_lastName {
+        font-size: 1.8rem; /* Specific font size for profile_name_lastName */
+    }
+    .interest_item {
+        padding: 0.8rem 1rem; /* Reduce padding */
+    }
     hr {
-        margin: 0 auto;
+        width: 90%; /* Adjust divider width */
+    }
+    .profile_profileImg {
+        flex: 0 0 100px; /* Further adjust the base width for very small screens */
     }
 }
