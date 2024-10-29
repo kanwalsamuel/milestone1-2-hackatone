@@ -1,63 +1,179 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Builder</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanwal Samuel - Resume</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>
-        Static Resume Builder By Kanwal Samuel</h1>
+  <div class="container">
+    <div class="profile">
+      <div class="profile_container">
+        <div class="profile_profileImg">
+          <img src="./images/update02.jpg" alt="Kanwal Samuel">
+        </div>
+        <div>
+          <h1 class="profile_name">
+            <span class="profile_name_firstName">Kanwal</span>
+            <span class="profile_name_lastName">Samuel</span>
+          </h1>
+          <p class="profile_title">Aspiring Web Developer</p>
+          <p class="description profile_description">
+            I am a detail-oriented aspiring software developer with a passion for web development. Currently enrolled in the Governor House Artificial Intelligence Program, I am building a solid foundation in technologies such as Next.js, React, TypeScript, and JavaScript. With a focus on creating innovative solutions, I am eager to contribute to collaborative projects and continuously enhance my technical skills.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="group-1">
+      <div class="skills">
+        <h3 class="title">Expertise</h3>
+        <ul class="skills_list description">
+          <li>JavaScript</li>
+          <li>Next.js</li>
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>HTML & CSS</li>
+          <li>Git</li>
+          <li>Figma</li> <!-- Added Figma expertise -->
+        </ul>
+      </div>
 
+      <div class="contact">
+        <h3 class="title">Contact</h3>
+        <div class="contact_info">
+          <p class="description">Karachi, Pakistan</p>
+          <p class="description">+92 300 123 4567</p>
+          <p class="description">sammjoel88@gmail.com</p>
+        </div>
+      </div>
 
-        <form id="resumeForm">
-            <fieldset>
-                <legend>Personal Information</legend>
-                
+      <div class="edu">
+        <h3 class="title">Education</h3>
+        <div class="edu_item">
+          <p class="item_preTitle">2023 - Present</p>
+          <h4 class="item_title">Governor House Artificial Intelligence Program</h4>
+          <p class="item_subtitle">Focused on advanced web development techniques.</p>
+        </div>
+        <div class="edu_item">
+          <p class="item_preTitle">2021 - 2023</p>
+          <h4 class="item_title">Bachelor of Arts</h4>
+          <p class="item_subtitle">Sindh University</p> <!-- Updated university -->
+        </div>
+        <div class="edu_item">
+          <p class="item_preTitle">2019 - 2021</p>
+          <h4 class="item_title">Intermediate</h4>
+          <p class="item_subtitle">Punjab College</p> <!-- Updated college -->
+        </div>
+        <div class="edu_item">
+          <p class="item_preTitle">2016 - 2018</p>
+          <h4 class="item_title">Matriculation</h4>
+          <p class="item_subtitle">Solomon's Convent School</p>
+        </div>
+      </div>
 
-                <label for="name">Name:</label>
-                <input type="text" id="name" required><br>
+      <div class="certification">
+        <h3 class="title">Certification</h3>
+        <div class="certification_item">
+          <p class="item_preTitle">2024</p>
+          <h4 class="item_title">Frontend Developer</h4>
+          <p class="description">Certification in frontend development techniques and best practices.</p>
+        </div>
+        <div class="certification_item">
+          <p class="item_preTitle">2024</p>
+          <h4 class="item_title">HTML, CSS & JavaScript</h4>
+          <p class="description">Certification from Coursera.</p>
+        </div>
+        <div class="certification_item">
+          <p class="item_preTitle">2024</p>
+          <h4 class="item_title">TypeScript</h4>
+          <p class="description">Certification from Coursera.</p>
+        </div>
+      </div>
+    </div>
+    <div class="group-2">
+      <div class="exp">
+        <h3 class="title">Experience</h3>
+        <div class="exp_item">
+          <p class="item_preTitle">2023 - Present</p>
+          <h4 class="item_title">Freelancer</h4>
+          <p class="item_subtitle">Web Developer</p>
+          <p class="description">
+            Developed various projects including a Tic-Tac-Toe game, personal portfolio website, and multiple web applications using Next.js and React.
+          </p>
+        </div>
+        <div class="exp_item">
+          <p class="item_preTitle">2024 - Present</p>
+          <h4 class="item_title">Hackathon Participant</h4>
+          <p class="item_subtitle">Various Events</p>
+          <p class="description">
+            Engaged in hackathons to develop innovative solutions and demonstrate skills in web development.
+          </p>
+        </div>
+      </div>
+      <div class="awards">
+        <h3 class="title">Awards</h3>
+        <div class="awards_item">
+          <p class="item_preTitle">2023</p>
+          <h4 class="item_title">Outstanding Project Award</h4>
+          <p class="description">
+            Recognized for the best project in the Governor House AI Program.
+          </p>
+        </div>
+        <div class="awards_item">
+          <p class="item_preTitle">2023</p>
+          <h4 class="item_title">Hackathon Participation Certificate</h4>
+          <p class="description">
+            Received for participating in multiple hackathons focused on web development.
+          </p>
+        </div>
+      </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br>
- 
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required><br>
+      <div class="interest">
+        <h3 class="title">Interests</h3>
+        <div class="interest_items">
+          <div class="interest_item">
+            <i data-feather="music"></i>
+            <span>Music</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="book"></i>
+            <span>Books</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="map"></i>
+            <span>Travel</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="code"></i>
+            <span>Coding</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="cpu"></i>
+            <span>Artificial Intelligence</span>
+          </div>
+        </div>
+      </div>
 
-
-            
-        <label for="profilePhoto">Profile Photo:</label>
-        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*"><br>
-
-
-            
-
-            </fieldset>
-
-            <fieldset>
-                <legend>Education</legend>
-                <label for="education">Education:</label> 
-                <textarea name="education" id="education" rows="4" required></textarea> <br>
-            </fieldset>
-
-            <fieldset>
-                <legend>Experience</legend>
-                <label for="experience">Experience:</label>
-                <textarea name="experience" id="experience" rows="4" required></textarea> <br>
-            </fieldset>
-
-            <fieldset>
-                <legend>Skills</legend>
-                <label for="skills">Skills:</label>
-                <textarea name="skills" id="skills" rows="4" required></textarea> <br>
-            </fieldset>
-
-            <button type="submit">Generate Resume</button>
-        </form>
-    </h1>
+      <div class="ref">
+        <h3 class="title">Reference</h3>
+        <div class="ref_item">
+          <p class="description">Available upon request.</p> <!-- Simplified reference -->
+        </div>
+      </div>
+    </div>
+    <div class="group-3">
+      <!-- Any additional content for group-3 can go here -->
+    </div>
+  </div>
+  <script>
+    feather.replace()
+  </script>
 </body>
+
 </html>
