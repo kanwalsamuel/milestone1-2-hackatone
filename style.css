@@ -1,353 +1,357 @@
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 
+/* Reset & Global Styles */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #00ffff; /* Neon Cyan */
-    --secondary-color: #ff00ff; /* Neon Magenta */
-    --highlight-color: #00ff00; /* Neon Green */
-    --text-color: #e0e0e0; /* Light grey for readability */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 10px;
-    text-align: left;
+  font-size: 10px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #1a1a4b; /* Midnight Blue */
-    color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  background-color: #1a1a4b; /* Midnight Blue */
+  color: var(--text-color);
 }
 
-/* Common styles */
-img {
-    border-radius: 50%;
-    border: 4px solid var(--highlight-color); /* Thicker border */
+/* Variables */
+:root {
+  --primary-color: #00ffff;      /* Neon Cyan */
+  --secondary-color: #ff00ff;    /* Neon Magenta */
+  --highlight-color: #00ff00;    /* Neon Green */
+  --text-color: #e0e0e0;         /* Light grey for readability */
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+/* Heading at the top */
+.heading {
+  position: absolute;
+  top: 5rem;
+  left: 46%;
+  transform: translateX(-30%);
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: var(--primary-color);
 }
 
-a:hover {
-    color: var(--highlight-color);
-}
-
-.description {
-    margin: 1rem 3rem; /* Unified margins for all descriptions */
-    font-size: 1.8rem; /* Increased font size */
-    font-weight: 400;
-    color: var(--text-color);
-    
-}
-
-.title {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 2.2rem; /* Increased font size */
-    text-transform: uppercase;
-    text-shadow: 0 0 10px var(--secondary-color);
-}
-
-.item_preTitle, .item_title, .item_subtitle {
-    margin: 1rem 3rem; /* Unified margins */
-}
-
-.item_preTitle {
-    font-size: 1.2rem; /* Increased font size */
-    color: var(--text-color);
-    font-weight: 300;
-}
-
-.item_title {
-    font-size: 1.6rem; /* Increased font size */
-    color: white;
-    font-weight: 500;
-    margin: 0.8rem 0;
-    text-shadow: 0 0 5px var(--primary-color);
-}
-
-.item_subtitle {
-    font-size: 2rem; /* Increased font size */
-    color: var(--text-color);
-    font-weight: 400;
-}
-
-/* Profile Title Style */
-.profile_title {
-    font-size: 1.6rem; /* Adjust the font size as needed */
-    font-weight: 500; /* You can also change the font weight */
-    margin: 1rem 3rem; /* Unified margin */
-}
-
-/* Layouts */
+/* Container & Box Layout */
 .container {
-    max-width: 1000px;
-    width: 90%;
-    margin: 0 auto;
-    display: grid;
-    padding: 5rem;
-    background: #003d3f; /* Dark Teal */
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 10px;
-    box-shadow: 0 0 20px var(--primary-color);
+  max-width: 1000px;
+  width: 90%;
+  margin: 1rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;  /* container gap */
 }
 
+/* Box styling for sections (reduced inner padding) */
+.box {
+  background-color: #003d3f; /* Dark Teal */
+  padding: 1.5rem;  /* reduced from 2rem to 1.5rem */
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+/* Profile Section */
 .profile {
-    grid-column: 1 / -1;
-    margin-bottom: 2rem;
-}
-
-.group-1, .group-2, .group-3 {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .profile_container {
-    display: flex;
-    gap: 2rem;
-    color: var(--primary-color);
+  display: flex;
+  gap: 1.5rem; /* reduced gap */
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .profile_profileImg {
-    flex: 0 0 150px; /* Set a base width for the image container */
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile_profileImg img {
-    max-width: 100%; /* Make it responsive */
-    height: auto; /* Maintain aspect ratio */
+  width: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 30px var(--secondary-color);
+}
+
+.profile_name {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;  /* moved heading up */
 }
 
 .profile_name_firstName {
-    font-weight: 200;
-    font-size: clamp(2.2rem, 8vw, 4.5rem); /* Increased font size */
-    text-transform: uppercase;
-    color: var(--text-color);
-    margin-left: 3rem;
+  font-weight: 200;
+  color: var(--text-color);
 }
 
 .profile_name_lastName {
-    color: var(--secondary-color);
-    font-weight: 700;
-    font-size: clamp(2.8rem, 15vw, 7.5rem); /* Increased font size */
-    text-transform: uppercase;
-    text-shadow: 0 0 8px var(--highlight-color);
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-shadow: 0 0 8px var(--highlight-color);
 }
 
-.interest {
-    margin-top: 2rem;
+.profile_title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
 }
 
+/* Description Text */
+.description {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* Titles */
+.title {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+/* Item Styling for Education, Experience, etc. */
+.item_preTitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.item_title {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 500;
+  margin: 0.8rem 0;
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+.item_subtitle {
+  font-size: 2rem;
+  color: var(--text-color);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* Lists within description (experience details) */
+.box ul {
+  list-style-type: disc;
+  margin-left: 4rem;
+}
+
+.box ul li {
+  margin: 0.3rem 0; /* reduced gap between list items */
+}
+
+/* Group Layouts */
+.group-1, .group-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;  /* group gap */
+}
+
+.group-1 > .box, 
+.group-2 > .box {
+  flex: 1 1 calc(50% - 1.5rem);
+}
+
+/* Contact Info */
+.contact_info p {
+  margin: 0.5rem 0;
+}
+
+/* Interests */
 .interest_items {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line */
-    gap: 2rem; /* Space between items */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .interest_item {
-    display: flex;
-    align-items: center; /* Center the icon and text vertically */
-    background: #1a1a1a; /* Dark background for items */
-    border: 2px solid var(--primary-color);
-    border-radius: 10px; /* Rounded corners */
-    padding: 1rem 1.5rem; /* Padding for spacing */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation on hover */
-    margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .interest_item:hover {
-    transform: scale(1.05); /* Slightly enlarge the item */
-    box-shadow: 0 0 15px var(--highlight-color); /* Glow effect on hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--highlight-color);
 }
 
 .interest_item i {
-    margin-right: 1rem; /* Space between icon and text */
-    color: var(--primary-color); /* Icon color */
-    font-size: 2rem; /* Icon size */
+  margin-right: 1rem;
+  color: var(--primary-color);
+  font-size: 2rem;
 }
 
 .interest_item span {
-    color: var(--text-color); /* Text color */
-    font-size: 1.6rem; /* Font size */
+  font-size: 1.6rem;
+  color: var(--text-color);
 }
 
-/* Expertise */
-.skills_list {
-    margin: 1rem 2rem; /* Unified margin */
-    line-height: 2;
-    color: var(--text-color);
-    font-size: 1.6rem; /* Increased font size */
-    text-shadow: 0 0 5px var(--secondary-color);
+/* RESPONSIVE STYLES */
+
+/* Large Screens (LG) - Default styles for desktops (min-width: 1025px) */
+/* No changes needed here if you're happy with the default */
+
+/* Medium Screens (MD) - Tablets & Small Laptops */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .group-1 > .box, 
+  .group-2 > .box {
+    flex: 1 1 100%;
+  }
+  
+  /* Adjust heading position if needed */
+  .heading {
+    top: 4rem;
+  }
 }
 
-/* Socials */
-.social_item:hover {
-    color: var(--highlight-color);
-    text-shadow: 0 0 10px var(--highlight-color);
+/* Small Screens (SM) - Tablets */
+@media (max-width: 768px) {
+  .profile_container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .group-1 > .box, 
+  .group-2 > .box {
+    flex: 1 1 100%;
+  }
+  
+  /* Adjust heading for small screens */
+  .heading {
+    top: 3.5rem;
+    font-size: 1.8rem;
+  }
 }
 
-/* Horizontal divider */
-hr {
-    grid-column: 1 / -1;
-    width: 80%;
-    margin: 5rem auto 1rem auto;
-    border: none;
-    border-top: 2px solid rgba(128, 128, 128, 0.3);
-    box-shadow: 0 0 5px var(--primary-color);
+/* Extra Small Screens (XS) - Large Phones */
+@media (max-width: 450px) {
+  html {
+    font-size: 9px;
+  }
+  
+  .profile_profileImg img {
+    width: 90px;
+  }
+  
+  .profile_name {
+    font-size: 2.2rem;
+  }
+  
+  .profile_title {
+    font-size: 1.4rem;
+  }
+  
+  .description {
+    font-size: 1.4rem;
+    margin: 0 1rem;
+  }
+  
+  .item_title {
+    font-size: 1.3rem;
+  }
+  
+  .item_subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .item_preTitle {
+    font-size: 1.1rem;
+  }
+  
+  .heading {
+    top: 3rem;
+    font-size: 1.8rem;
+  }
 }
 
-/* Responsive adjustments */
-@media only screen and (max-width: 1024px) {
-    .container {
-        padding: 4rem;
-        gap: 3rem;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        grid-template-columns: 1fr; /* Change to a single column */
-        padding: 3rem;
-        gap: 5rem;
-    }
-    
-    /* Align profile photo and name in a column */
-    .profile {
-        margin-bottom: 0;
-        display: flex; /* Use flex to stack items */
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center align */
-    }
-    
-    .profile_profileImg {
-        margin-bottom: 1rem; /* Space below the image */
-        flex: 0 0 120px; /* Adjust the base width for smaller screens */
-    }
-    
-    .profile_name {
-        display: flex; /* Use flexbox for the name layout */
-        flex-direction: column; /* Align items in a column */
-        align-items: center; /* Center items */
-        text-align: center; /* Center text */
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .container { /* Assuming you have a container for your profile */
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-    }
-
-    .profile_profileImg {
-        width: 90px; /* Set a smaller fixed width for the image */
-        height: 90px; /* Ensure the height matches the width for a square image */
-        border-radius: 50%; /* Make the image round */
-        margin-bottom: 1rem; /* Add space below the image */
-    }
-
-    .description {
-        font-size: 1.1rem; /* Adjust font size for smaller screens */
-        margin: 0 1rem; /* Adjust margins */
-    }
-
-    .item_title {
-        font-size: 1.3rem; /* Specific font size for item_title */
-        margin-top: 0.5rem; /* Space above title */
-    }
-
-    .item_subtitle {
-        font-size: 1.1rem; /* Specific font size for item_subtitle */
-        margin-top: 0.3rem; /* Space above subtitle */
-    }
-
-    .item_preTitle {
-        font-size: 1.2rem; /* Specific font size for item_preTitle */
-        margin-top: 0.2rem; /* Space above pre-title */
-    }
- 
-    .profile_name {
-        flex-direction: column; /* Align items in a column */
-        align-items: center; /* Center items */
-    } 
-    .profile_name_firstName{
-        font-size: 1.4rem;
-    
-}
-
-.profile_name_lastName{
+/* Extra Extra Small Screens (XXS) - Small Phones */
+@media (max-width: 350px) {
+  html {
+    font-size: 8px;
+  }
+  
+  .profile_profileImg img {
+    width: 70px;
+  }
+  
+  .profile_name {
+    font-size: 2rem;
+  }
+  
+  .profile_title {
     font-size: 1.2rem;
-
-}
-
-.profile_title{
+  }
+  
+  .description {
+    font-size: 1.2rem;
+  }
+  
+  .item_title {
     font-size: 1rem;
+  }
+  
+  .item_subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .item_preTitle {
+    font-size: 0.8rem;
+  }
+  
+  .heading {
+    top: 2.5rem;
+    font-size: 1.6rem;
+  }
 }
-}
-
-@media only screen and (max-width: 350px) {
-    .container { 
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        padding: 1rem; /* Add some padding to the container */
+   
+/* Responsive Fix for screens between 430px to 750px */
+@media (max-width: 750px) and (min-width: 430px) {
+    .heading {
+      position: relative;
+      top: 3rem; /* Adjust this value to move it down */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem; /* Adjust font size for better fit */
     }
-
-    .profile_profileImg {
-        width: 70px; /* Set a smaller fixed width for the image */
-        height: 70px; /* Ensure the height matches the width for a square image */
-        border-radius: 50%; /* Make the image round */
-        margin-bottom: 0.5rem; /* Add space below the image */
+  }
+  
+  /* For screens up to 430px */
+  @media (max-width: 430px) {
+    .heading {
+      position: absolute;
+      top: 2 rem; /* Adjust this value further if necessary */
+      font-size: 1.6rem; /* Adjust font size */
+      margin: 1rem 0;
     }
-
-    .description {
-        font-size: 0.9rem; /* Further reduce font size for smaller screens */
-        margin: 0 0.5rem; /* Adjust margins for smaller screens */
-    }
-
-    .item_title {
-        font-size: 1rem; /* Reduce font size for item_title */
-        margin-top: 0.3rem; /* Space above title */
-    }
-
-    .item_subtitle {
-        font-size: 0.9rem; /* Reduce font size for item_subtitle */
-        margin-top: 0.2rem; /* Space above subtitle */
-    }
-
-    .item_preTitle {
-        font-size: 0.8rem; /* Reduce font size for item_preTitle */
-        margin-top: 0.1rem; /* Space above pre-title */
-    }
-
-    .profile_name {
-        flex-direction: column; /* Align items in a column */
-        align-items: center; /* Center items */
-    } 
-
-    .profile_name_firstName {
-        font-size: 1.2rem; /* Reduce font size */
-    }
-
-    .profile_name_lastName {
-        font-size: 1rem; /* Reduce font size */
-    }
-
-    .profile_title {
-        font-size: 0.8rem; /* Reduce font size for title */
-    }
-}
+  }
